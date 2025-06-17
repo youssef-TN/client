@@ -1,0 +1,294 @@
+{
+  "common": {
+    "actions": {
+      "create": "Create",
+      "edit": "Edit",
+      "delete": "Delete",
+      "save": "Save",
+      "cancel": "Cancel",
+      "submit": "Submit",
+      "search": "Search",
+      "filter": "Filter",
+      "export": "Export",
+      "import": "Import",
+      "refresh": "Refresh",
+      "close": "Close"
+    },
+    "labels": {
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "status": "Status",
+      "date": "Date",
+      "type": "Type",
+      "quantity": "Quantity",
+      "price": "Price",
+      "total": "Total",
+      "unit": "Unit",
+      "brand": "Brand",
+      "account": "Account",
+      "tax": "Tax",
+      "returnableItem": "Returnable Item",
+      "dimensions": "Dimensions"
+    },
+    "dimensions": {
+      "length": "Length",
+      "width": "Width",
+      "height": "Height",
+      "weight": "Weight"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "pending": "Pending",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "messages": {
+      "success": {
+        "created": "Successfully created",
+        "updated": "Successfully updated",
+        "deleted": "Successfully deleted"
+      },
+      "error": {
+        "notFound": "Item not found",
+        "validationFailed": "Validation failed",
+        "serverError": "Server error occurred"
+      },
+      "empty": {
+        "noData": "No data found",
+        "noResults": "No results found",
+        "noItems": "No items available"
+      }
+    },
+    "time": {
+      "periods": {
+        "today": "Today",
+        "yesterday": "Yesterday",
+        "thisWeek": "This Week",
+        "lastWeek": "Last Week",
+        "thisMonth": "This Month",
+        "lastMonth": "Last Month",
+        "thisYear": "This Year",
+        "lastYear": "Last Year"
+      }
+    }
+  },
+  "navigation": {
+    "main": {
+      "home": "Home",
+      "inventory": "Inventory",
+      "sales": "Sales",
+      "purchases": "Purchases",
+      "reports": "Reports"
+    },
+    "header": {
+      "recentActivities": "Recent Activities",
+      "notifications": "Notifications",
+      "settings": "Settings",
+      "organizations": "Organizations"
+    },
+    "inventory": {
+      "items": "Items",
+      "itemGroups": "Item Groups",
+      "priceLists": "Price Lists",
+      "adjustments": "Inventory Adjustments"
+    },
+    "sales": {
+      "customers": "Customers",
+      "orders": "Sales Orders",
+      "packages": "Packages",
+      "shipments": "Shipments",
+      "invoices": "Invoices",
+      "receipts": "Sales Receipts",
+      "payments": "Payments Received",
+      "returns": "Sales Returns",
+      "creditNotes": "Credit Notes"
+    },
+    "purchases": {
+      "vendors": "Vendors",
+      "expenses": "Expenses",
+      "orders": "Purchase Orders",
+      "receives": "Purchase Receives",
+      "bills": "Bills",
+      "payments": "Payments Made",
+      "credits": "Vendor Credits"
+    }
+  },
+  "pages": {
+    "home": {
+      "search": {
+        "options":"Search in Customers;Search in Items;Search in Price Lists;Search in Inventory Adjustments;Search in Sales Orders;Search in Packages;Search in Shipments;Search in Invoices;Search in Sales Receipts",
+        "advanced":"Advanced Search"
+      },
+      "widgets": {
+        "salesActivities": {
+          "title": "Sales Activities",
+          "labels": {
+            "quantity": "Qty",
+            "packages": "Pkg",
+            "toBePacked": "To Be Packed",
+            "toBeShipped": "To Be Shipped",
+            "toBeDelivered": "To Be Delivered",
+            "toBeInvoiced": "To Be Invoiced"
+          }
+        },
+        "inventorySummary": {
+          "title": "Inventory Summary",
+          "labels": {
+            "quantityInHand": "Quantity In Hand",
+            "quantityToBeReceived": "Quantity To Be Received"
+          }
+        },
+        "itemDetails": {
+          "title": "Item Details",
+          "filters": {
+            "lowStockItems": "Low Stock Items",
+            "allItemGroups": "All Item Groups",
+            "allItems": "All Items",
+            "activeItems": "Active Items"
+          }
+        },
+        "purchaseOrder": {
+          "title": "Purchase Order",
+          "labels": {
+            "quantityOrdered": "Qty Ordered",
+            "totalCost": "Total Cost"
+          }
+        },
+        "salesOrder": {
+          "title": "Sales Order",
+          "statuses": {
+            "channel": "Channel",
+            "draft": "Draft",
+            "confirmed": "Confirmed",
+            "packed": "Packed",
+            "shipped": "Shipped",
+            "invoiced": "Invoiced"
+          },
+          "messages": {
+            "empty": "No sales were made in this time frame"
+          }
+        },
+        "salesOrderSummary": {
+          "title": "Sales Order Summary",
+          "labels": {
+            "in": "in",
+            "totalSales": "Total Sales"
+          },
+          "messages": {
+            "empty": "No data found"
+          }
+        }
+      },
+      "messages": {
+        "welcome": "Hello,"
+      }
+    },
+    "inventory": {
+      "items": {
+        "title": "Items",
+        "search": {
+          "placeholder": "Search in Items"
+        },
+        "actions": {
+          "new": {
+            "label": "New",
+            "tooltip": "Create a new item"
+          },
+          "more": {
+            "label": "More Actions",
+            "tooltip": "More Actions"
+          },
+          "import": {
+            "label": "Import",
+            "options": {
+              "items": "Import Items",
+              "images": "Import Items Images"
+            }
+          },
+          "export": {
+            "label": "Export",
+            "options": {
+              "items": "Export Items",
+              "currentView": "Export Current View"
+            }
+          },
+          "preferences": "Preferences",
+          "refresh": "Refresh List",
+          "resetColumnWidth": "Reset Column Width",
+          "customizeColumns": "Customize Columns",
+          "wrapText": "Wrap Text",
+          "clipText": "Clip Text"
+        },
+        "filters": {
+          "allItems": "All Items",
+          "activeItems": "Active Items",
+          "ungroupedItems": "Ungrouped Items",
+          "lowStockItems": "Low Stock Items",
+          "sales": "Sales",
+          "purchases": "Purchases",
+          "inventoryItems": "Inventory Items",
+          "nonInventoryItems": "Non-Inventory Items",
+          "services": "Services",
+          "inactiveItems": "Inactive Items",
+          "binTrackedItems": "Bin Tracked Items",
+          "returnableItems": "Returnable Items",
+          "nonReturnableItems": "Non Returnable Items"
+        },
+        "types": {
+          "storable": "Inventory Items",
+          "consumable": "Non-Inventory Items",
+          "service": "Service"
+        },
+        "sales": {
+          "title": "Sales Information",
+          "sellingPrice": "Selling Price"
+        },
+        "purchase": {
+          "title": "Purchase Information",
+          "costPrice": "Cost Price"
+        },
+        "inventory": {
+          "stockOnHand": "Stock On Hand",
+          "reorderLevel": "Reorder Level"
+        }
+      },
+      "settings": {
+        "fieldName": "Field Name",
+        "dataType": {
+          "label": "Data Type",
+          "options": {
+            "textInput": "Text Input",
+            "email": "Email",
+            "number": "Number",
+            "decimal": "Decimal",
+            "url": "URL",
+            "phone": "Phone",
+            "amount": "Amount",
+            "percent": "Percent",
+            "date": "Date",
+            "dateTime": "Date and Time",
+            "checkBox": "Check Box",
+            "dropdown": "Dropdown",
+            "multiSelect": "Multi Select",
+            "autoGenerateNumber": "Auto Generate Number",
+            "textArea": "Text Area",
+            "attachment": "Attachment"
+          }
+        },
+        "required": "Required",
+        "showAllInPDF": "Show All in PDF",
+        "status": "Status"
+      }
+    }
+  },
+  "organizations": {
+    "title": "Organizations",
+    "header": "My Organizations",
+    "actions": {
+      "manage": "Manage",
+      "close": "Close Organizations Sidebar"
+    }
+  }
+}
