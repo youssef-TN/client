@@ -1,0 +1,9 @@
+import { createLazyFileRoute } from '@tanstack/react-router'
+
+export const Route = createLazyFileRoute('/inventory/items')({
+  component: RouteComponent,
+})
+
+function RouteComponent() {
+  return <div>Hello "/inventory/items"!</div>
+}

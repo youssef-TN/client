@@ -12,7 +12,8 @@
       "export": "Export",
       "import": "Import",
       "refresh": "Refresh",
-      "close": "Close"
+      "close": "Close",
+      "customizeColumns":"Customize Columns"
     },
     "labels": {
       "id": "ID",
