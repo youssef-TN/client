@@ -67,12 +67,7 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-
-interface Item {
-  id: number;
-  name: string;
-  quantity: number;
-}
+import type { Item } from "@/types/item";
 
 // Sortable column component for the customization dialog
 function ColumnCustomizationItem({
@@ -137,7 +132,7 @@ function ColumnCustomizationDialog({
   const [draftOrder, setDraftOrder] = useState<string[]>(() =>
     table
       .getAllColumns()
-      .filter((col) => col.id !== "select" && col.id !== "options")
+      .filter((col) => col.id !== "actions")
       .map((col) => col.id)
   );
   const [draftVisibility, setDraftVisibility] = useState<VisibilityState>(() =>
@@ -258,38 +253,44 @@ function RouteComponent() {
   const columns = useMemo<ColumnDef<Item>[]>(
     () => [
       {
-        id: "options",
-        header: ({ table }) => (
-          <ColumnCustomizationDialog
-            table={table}
-            onSave={(order, visibility) => {
-              setColumnOrder(["options", "select", ...order]);
-              setColumnVisibility(visibility);
-            }}
-          />
-        ),
-        enableSorting: false,
-        enableHiding: false,
-        enableColumnFilter: false,
-      },
-      {
-        id: "select",
-        header: ({ table }) => (
-          <Checkbox
-            checked={table.getIsAllPageRowsSelected()}
-            onCheckedChange={(value) =>
-              table.toggleAllPageRowsSelected(!!value)
-            }
-            aria-label="Select all"
-          />
-        ),
-        cell: ({ row }) => (
-          <Checkbox
-            checked={row.getIsSelected()}
-            onCheckedChange={(value) => row.toggleSelected(!!value)}
-            aria-label="Select row"
-          />
-        ),
+        id: "actions",
+        header: ({ table }) => {
+          const anySelected = Object.values(table.getState().rowSelection).some(Boolean);
+          return (
+            <div className="flex justify-end items-center gap-2">
+              {!anySelected && (
+                <ColumnCustomizationDialog
+                  table={table}
+                  onSave={(order, visibility) => {
+                    setColumnOrder([...order, "actions"]);
+                    setColumnVisibility(visibility);
+                  }}
+                />
+              )}
+              <Checkbox
+                checked={table.getIsAllPageRowsSelected()}
+                onCheckedChange={value => table.toggleAllPageRowsSelected(!!value)}
+                aria-label="Select all"
+              />
+            </div>
+          );
+        },
+        cell: ({ row, table }) => {
+          const anySelected = Object.values(table.getState().rowSelection).some(Boolean);
+          return (
+            <div className="flex justify-end items-center gap-2">
+              {!anySelected && (
+                // Place your row options menu here (e.g., edit/delete)
+                null
+              )}
+              <Checkbox
+                checked={row.getIsSelected()}
+                onCheckedChange={value => row.toggleSelected(!!value)}
+                aria-label="Select row"
+              />
+            </div>
+          );
+        },
         enableSorting: false,
         enableHiding: false,
         enableColumnFilter: false,
@@ -343,6 +344,75 @@ function RouteComponent() {
         enableHiding: true,
       },
       {
+        accessorKey: "cost",
+        header: ({ column }) => (
+          <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            className="flex items-center gap-2"
+          >
+            {t("pages.inventory.items.purchase.costPrice")}
+            {column.getIsSorted() === "asc" ? (
+              <ArrowUp className="h-4 w-4" />
+            ) : column.getIsSorted() === "desc" ? (
+              <ArrowDown className="h-4 w-4" />
+            ) : (
+              <ArrowUpDown className="h-4 w-4" />
+            )}
+          </Button>
+        ),
+        cell: ({ row }) => <div>{row.getValue("cost")}</div>,
+        enableSorting: true,
+        enableColumnFilter: true,
+        enableHiding: true,
+      },
+      {
+        accessorKey: "price",
+        header: ({ column }) => (
+          <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            className="flex items-center gap-2"
+          >
+            {t("pages.inventory.items.sales.sellingPrice")}
+            {column.getIsSorted() === "asc" ? (
+              <ArrowUp className="h-4 w-4" />
+            ) : column.getIsSorted() === "desc" ? (
+              <ArrowDown className="h-4 w-4" />
+            ) : (
+              <ArrowUpDown className="h-4 w-4" />
+            )}
+          </Button>
+        ),
+        cell: ({ row }) => <div>{row.getValue("price")}</div>,
+        enableSorting: true,
+        enableColumnFilter: true,
+        enableHiding: true,
+      },
+      {
+        accessorKey: "category",
+        header: ({ column }) => (
+          <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            className="flex items-center gap-2"
+          >
+            {t("common.labels.category")}
+            {column.getIsSorted() === "asc" ? (
+              <ArrowUp className="h-4 w-4" />
+            ) : column.getIsSorted() === "desc" ? (
+              <ArrowDown className="h-4 w-4" />
+            ) : (
+              <ArrowUpDown className="h-4 w-4" />
+            )}
+          </Button>
+        ),
+        cell: ({ row }) => <div>{row.getValue("category")}</div>,
+        enableSorting: true,
+        enableColumnFilter: true,
+        enableHiding: true,
+      },
+      {
         accessorKey: "quantity",
         header: ({ column }) => (
           <Button
@@ -364,6 +434,7 @@ function RouteComponent() {
         enableSorting: true,
         enableHiding: false,
       },
+      
     ],
     [t]
   );

@@ -2,6 +2,7 @@
   "common": {
     "actions": {
       "create": "Create",
+      "new": "New",
       "edit": "Edit",
       "delete": "Delete",
       "save": "Save",
@@ -13,7 +14,8 @@
       "import": "Import",
       "refresh": "Refresh",
       "close": "Close",
-      "customizeColumns":"Customize Columns"
+      "customizeColumns": "Customize Columns",
+      "more": "More Actions"
     },
     "labels": {
       "id": "ID",
@@ -22,6 +24,7 @@
       "status": "Status",
       "date": "Date",
       "type": "Type",
+      "category":"Category",
       "quantity": "Quantity",
       "price": "Price",
       "total": "Total",
@@ -73,6 +76,10 @@
         "thisYear": "This Year",
         "lastYear": "Last Year"
       }
+    },
+    "search": {
+      "options": "Search in Customers;Search in Items;Search in Price Lists;Search in Inventory Adjustments;Search in Sales Orders;Search in Packages;Search in Shipments;Search in Invoices;Search in Sales Receipts",
+      "advanced": "Advanced Search"
     }
   },
   "navigation": {
@@ -118,68 +125,64 @@
   },
   "pages": {
     "home": {
-      "search": {
-        "options":"Search in Customers;Search in Items;Search in Price Lists;Search in Inventory Adjustments;Search in Sales Orders;Search in Packages;Search in Shipments;Search in Invoices;Search in Sales Receipts",
-        "advanced":"Advanced Search"
+      "main": {
+        "salesActivities": "Sales Activities",
+        "inventorySummary": "Inventory Summary",
+        "itemDetails": "Item Details",
+        "purchaseOrder": "Purchase Order",
+        "salesOrder": "Sales Order",
+        "salesOrderSummary": "Sales Order Summary"
       },
-      "widgets": {
-        "salesActivities": {
-          "title": "Sales Activities",
-          "labels": {
-            "quantity": "Qty",
-            "packages": "Pkg",
-            "toBePacked": "To Be Packed",
-            "toBeShipped": "To Be Shipped",
-            "toBeDelivered": "To Be Delivered",
-            "toBeInvoiced": "To Be Invoiced"
-          }
+      "salesActivities": {
+        "labels": {
+          "quantity": "Qty",
+          "packages": "Pkg",
+          "toBePacked": "To Be Packed",
+          "toBeShipped": "To Be Shipped",
+          "toBeDelivered": "To Be Delivered",
+          "toBeInvoiced": "To Be Invoiced"
+        }
+      },
+      "inventorySummary": {
+        "labels": {
+          "quantityInHand": "Quantity In Hand",
+          "quantityToBeReceived": "Quantity To Be Received"
+        }
+      },
+      "itemDetails": {
+        "filters": {
+          "lowStockItems": "Low Stock Items",
+          "allItemGroups": "All Item Groups",
+          "allItems": "All Items",
+          "activeItems": "Active Items"
+        }
+      },
+      "purchaseOrder": {
+        "labels": {
+          "quantityOrdered": "Qty Ordered",
+          "totalCost": "Total Cost"
+        }
+      },
+      "salesOrder": {
+        "statuses": {
+          "channel": "Channel",
+          "draft": "Draft",
+          "confirmed": "Confirmed",
+          "packed": "Packed",
+          "shipped": "Shipped",
+          "invoiced": "Invoiced"
         },
-        "inventorySummary": {
-          "title": "Inventory Summary",
-          "labels": {
-            "quantityInHand": "Quantity In Hand",
-            "quantityToBeReceived": "Quantity To Be Received"
-          }
+        "messages": {
+          "empty": "No sales were made in this time frame"
+        }
+      },
+      "salesOrderSummary": {
+        "labels": {
+          "in": "in",
+          "totalSales": "Total Sales"
         },
-        "itemDetails": {
-          "title": "Item Details",
-          "filters": {
-            "lowStockItems": "Low Stock Items",
-            "allItemGroups": "All Item Groups",
-            "allItems": "All Items",
-            "activeItems": "Active Items"
-          }
-        },
-        "purchaseOrder": {
-          "title": "Purchase Order",
-          "labels": {
-            "quantityOrdered": "Qty Ordered",
-            "totalCost": "Total Cost"
-          }
-        },
-        "salesOrder": {
-          "title": "Sales Order",
-          "statuses": {
-            "channel": "Channel",
-            "draft": "Draft",
-            "confirmed": "Confirmed",
-            "packed": "Packed",
-            "shipped": "Shipped",
-            "invoiced": "Invoiced"
-          },
-          "messages": {
-            "empty": "No sales were made in this time frame"
-          }
-        },
-        "salesOrderSummary": {
-          "title": "Sales Order Summary",
-          "labels": {
-            "in": "in",
-            "totalSales": "Total Sales"
-          },
-          "messages": {
-            "empty": "No data found"
-          }
+        "messages": {
+          "empty": "No data found"
         }
       },
       "messages": {
@@ -187,42 +190,23 @@
       }
     },
     "inventory": {
+      "main": {
+        "items": "Items"
+      },
       "items": {
-        "title": "Items",
-        "search": {
-          "placeholder": "Search in Items"
+        "search": 1,
+        "importOptions": {
+          "items": "Import Items",
+          "images": "Import Items Images"
         },
-        "actions": {
-          "new": {
-            "label": "New",
-            "tooltip": "Create a new item"
-          },
-          "more": {
-            "label": "More Actions",
-            "tooltip": "More Actions"
-          },
-          "import": {
-            "label": "Import",
-            "options": {
-              "items": "Import Items",
-              "images": "Import Items Images"
-            }
-          },
-          "export": {
-            "label": "Export",
-            "options": {
-              "items": "Export Items",
-              "currentView": "Export Current View"
-            }
-          },
-          "preferences": "Preferences",
-          "refresh": "Refresh List",
-          "resetColumnWidth": "Reset Column Width",
-          "customizeColumns": "Customize Columns",
-          "wrapText": "Wrap Text",
-          "clipText": "Clip Text"
+        "exportOptions": {
+          "items": "Export Items",
+          "currentView": "Export Current View"
         },
-        "filters": {
+        "preferences": "Preferences",
+        "refresh": "Refresh List",
+        "customizeColumns": "Customize Columns",
+        "filterOptions": {
           "allItems": "All Items",
           "activeItems": "Active Items",
           "ungroupedItems": "Ungrouped Items",
